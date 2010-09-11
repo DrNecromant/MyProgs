@@ -1,3 +1,7 @@
-MYLIB = mylib.o
+MAIN = prog
+MYLIB = mylib.c
 
-prog: $(MYLIB)
+$(MAIN): $(MYLIB:.c=.o)
+
+clean:
+	rm -f $(MAIN) $(MYLIB:.c=.o)
