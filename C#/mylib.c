@@ -195,7 +195,7 @@ int saveTreeEl(treep *t, char c, int pos)
 					}
 					debug("TREE: set value %c", c);
 					branch->right->value = c;
-					branch->count = 0;
+					branch->right->count = 0;
 				}
 				branch = branch->right;
 			}
@@ -208,7 +208,7 @@ int saveTreeEl(treep *t, char c, int pos)
 					}
 					debug("TREE: set value %c", c);
 					branch->left->value = c;
-					branch->count = 0;
+					branch->left->count = 0;
 				}
 				branch = branch->left;
 			}
