@@ -31,6 +31,7 @@ int main(int argc, char **argv)
 		}
 	}
 	info("letters count %d", i);
+	saveTree(storage);
 	closeFiles();
 	return 0;
 }
@@ -64,5 +65,25 @@ int parseArgs(int argc, char **argv)
 	debug("Get files to compress: %s, %s", fileread, filewrite);
 	openFileRead(fileread);
 	openFileWrite(filewrite);
+	return 0;
+}
+
+saveTree(treep t) {
+	intchainp p;
+	if(t != 0) {
+		saveTree(t->left);
+		if(t->value == '\n') {
+			info("\\n, %d", t->count);
+		}
+		else {
+			info("%c, %d", t->value, t->count);
+		}
+		p = t->pos;
+		while(p) {
+			info("%d", p->value);
+			p = p->next;
+		}
+		saveTree(t->right);
+	}
 	return 0;
 }
