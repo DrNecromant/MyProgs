@@ -220,6 +220,21 @@ int saveTreeEl(treep *t, char c, int pos)
 	return ret;
 }
 
+char getCharFromInt1(int a)
+{
+	return(a & 0xFF);
+}
+
+char getCharFromInt2(int a)
+{
+	return((a >> 8) & 0xFF);
+}
+
+int getIntFromChars(char c1, char c2)
+{
+	return((c2 << 8) + (c1 & 0x00FF));
+}
+
 int getTime()
 {
 	return time(NULL);

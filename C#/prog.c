@@ -70,17 +70,20 @@ int parseArgs(int argc, char **argv)
 
 saveTree(treep t) {
 	intchainp p;
+	int diff, pvalue = 0;
 	if(t != 0) {
 		saveTree(t->left);
-		if(t->value == '\n') {
-			info("\\n, %d", t->count);
-		}
-		else {
-			info("%c, %d", t->value, t->count);
-		}
+		debug("%c, %d", t->value, t->count);
+		putChar(t->value);
+		putChar(getCharFromInt2(t->count));
+		putChar(getCharFromInt1(t->count));
 		p = t->pos;
 		while(p) {
-			info("%d", p->value);
+			diff = p->value - pvalue;
+			putChar(getCharFromInt2(diff));
+			putChar(getCharFromInt1(diff));
+			debug("%d, %d", p->value, diff);
+			pvalue = p->value;
 			p = p->next;
 		}
 		saveTree(t->right);
