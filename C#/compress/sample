@@ -1,0 +1,130 @@
+May 24 22:24:08 VNLNetCfgGetAnswerString - Database cache is not loaded
+May 24 22:24:08 VNLNetCfgGetAnswerString - Database cache is not loaded
+May 24 22:24:08 VNLNetCfgCheckVersion - Unable to open network configuration database file, error: No such file or directory
+May 24 22:24:08 VNLNetCfgGetAnswerString - Database cache is not loaded
+May 24 22:24:08 VNLNetCfgGetAnswerString - Database cache is not loaded
+May 24 22:24:08 VNLFileExists - Cannot check for file or directory: /etc/vmware/networking , error: No such file or directory
+May 24 22:24:08 VNL_CreateNetworkingDB - Created and initialized networking configuration database: /etc/vmware/networking
+May 24 22:24:08 VNL_Load - LOG_ERR logged
+May 24 22:24:08 VNL_Load - LOG_WRN logged
+May 24 22:24:08 VNL_Load - LOG_OK logged
+May 24 22:24:08 VNL_Load - Successfully initialized Vnetlib
+May 24 22:24:10 VNLAssignUnusedSubnetAddressToVNet - Success: vnet 1 assigned subnet 192.168.46.0.
+May 24 22:24:10 VNL_AssignSubnetAddressToVnet - New subnet configured for vnet: vmnet1
+May 24 22:24:10 VNL_SetVnetUseAdapter - Success in configuring Adapter for the vnet
+May 24 22:24:10 VNL_SetVnetUseDHCP - Success in configuring DHCP for the vnet
+May 24 22:24:12 VNLAssignUnusedSubnetAddressToVNet - Success: vnet 8 assigned subnet 172.16.219.0.
+May 24 22:24:12 VNL_AssignSubnetAddressToVnet - New subnet configured for vnet: vmnet8
+May 24 22:24:12 VNL_SetVnetUseAdapter - Success in configuring Adapter for the vnet
+May 24 22:24:12 VNL_SetVnetUseDHCP - Success in configuring DHCP for the vnet
+May 24 22:24:12 VNL_SetVnetUseNAT - Success in configuring NAT for vnet: vmnet8
+May 24 22:24:12 VNL_UpdateDHCPFromConfig - Removing DHCP configuration file succeeded for vnet: vmnet0
+May 24 22:24:12 VNL_UpdateNATFromConfig - Removing NAT configuration file succeeded for vnet: vmnet0
+May 24 22:24:12 VNLDHCPGetParameter - Value for DHCP parameter: "Default Lease Duration" not found in configuration for vnet: 1
+May 24 22:24:12 VNLDHCPGetParameter - Value for DHCP parameter: "Max Lease Duration" not found in configuration for vnet: 1
+May 24 22:24:12 VNLDHCPGetParameter - Value for DHCP parameter: "Lease Begin IP" not found in configuration for vnet: 1
+May 24 22:24:12 VNLDHCPGetParameter - Value for DHCP parameter: "Lease End IP" not found in configuration for vnet: 1
+May 24 22:24:12 VNLDHCPGetParameter - Value for DHCP parameter: "Broadcast Address" not found in configuration for vnet: 1
+May 24 22:24:12 VNLDHCPGetParameter - Value for DHCP parameter: "DNS Address" not found in configuration for vnet: 1
+May 24 22:24:12 VNLDHCPGetParameter - Value for DHCP parameter: "Domain Name" not found in configuration for vnet: 1
+May 24 22:24:12 VNLDHCPGetParameter - Value for DHCP parameter: "Subnet Default Lease Duration" not found in configuration for vnet: 1
+May 24 22:24:12 VNLDHCPGetParameter - Value for DHCP parameter: "Subnet Max Lease Duration" not found in configuration for vnet: 1
+May 24 22:24:12 VNLNetCfgEnumDHCPMACToIP - List of mappings is empty
+May 24 22:24:12 VNL_UpdateDHCPFromConfig - Writing DHCP configuration file succeeded for vnet: vmnet1
+May 24 22:24:12 VNLRemoveFile - Cannot delete Directory: /etc/vmware/vmnet1 because of: Directory not empty
+May 24 22:24:12 VNL_UpdateNATFromConfig - Removing NAT configuration file succeeded for vnet: vmnet1
+May 24 22:24:12 VNL_UpdateDHCPFromConfig - Removing DHCP configuration file succeeded for vnet: vmnet2
+May 24 22:24:12 VNL_UpdateNATFromConfig - Removing NAT configuration file succeeded for vnet: vmnet2
+May 24 22:24:12 VNL_UpdateDHCPFromConfig - Removing DHCP configuration file succeeded for vnet: vmnet3
+May 24 22:24:12 VNL_UpdateNATFromConfig - Removing NAT configuration file succeeded for vnet: vmnet3
+May 24 22:24:12 VNL_UpdateDHCPFromConfig - Removing DHCP configuration file succeeded for vnet: vmnet4
+May 24 22:24:12 VNL_UpdateNATFromConfig - Removing NAT configuration file succeeded for vnet: vmnet4
+May 24 22:24:12 VNL_UpdateDHCPFromConfig - Removing DHCP configuration file succeeded for vnet: vmnet5
+May 24 22:24:12 VNL_UpdateNATFromConfig - Removing NAT configuration file succeeded for vnet: vmnet5
+May 24 22:24:12 VNL_UpdateDHCPFromConfig - Removing DHCP configuration file succeeded for vnet: vmnet6
+May 24 22:24:12 VNL_UpdateNATFromConfig - Removing NAT configuration file succeeded for vnet: vmnet6
+May 24 22:24:12 VNL_UpdateDHCPFromConfig - Removing DHCP configuration file succeeded for vnet: vmnet7
+May 24 22:24:12 VNL_UpdateNATFromConfig - Removing NAT configuration file succeeded for vnet: vmnet7
+May 24 22:24:12 VNLDHCPGetParameter - Value for DHCP parameter: "Default Lease Duration" not found in configuration for vnet: 8
+May 24 22:24:12 VNLDHCPGetParameter - Value for DHCP parameter: "Max Lease Duration" not found in configuration for vnet: 8
+(II) Loading extension XVideo
+(II) Loading extension XVideo-MotionCompensation
+(II) Loading extension X-Resource
+(II) LoadModule: "dbe"
+(II) Loading /usr/lib64/xorg/modules/extensions//libdbe.so
+(II) Module dbe: vendor="X.Org Foundation"
+	compiled for 1.6.1.901, module version = 1.0.0
+	Module class: X.Org Server Extension
+	ABI class: X.Org Server Extension, version 2.0
+(II) Loading extension DOUBLE-BUFFER
+(II) LoadModule: "glx"
+(II) Loading /usr/lib64/xorg/modules/extensions/nvidia//libglx.so
+(II) Module glx: vendor="NVIDIA Corporation"
+	compiled for 4.0.2, module version = 1.0.0
+	Module class: X.Org Server Extension
+(II) NVIDIA GLX Module  185.18.36  Fri Aug 14 18:27:24 PDT 2009
+(II) Loading extension GLX
+(II) LoadModule: "record"
+(II) Loading /usr/lib64/xorg/modules/extensions//librecord.so
+(II) Module record: vendor="X.Org Foundation"
+	compiled for 1.6.1.901, module version = 1.13.0
+	Module class: X.Org Server Extension
+	ABI class: X.Org Server Extension, version 2.0
+(II) Loading extension RECORD
+(II) LoadModule: "dri"
+(II) Loading /usr/lib64/xorg/modules/extensions//libdri.so
+(II) Module dri: vendor="X.Org Foundation"
+	compiled for 1.6.1.901, module version = 1.0.0
+	ABI class: X.Org Server Extension, version 2.0
+(II) Loading extension XFree86-DRI
+(II) LoadModule: "dri2"
+(II) Loading /usr/lib64/xorg/modules/extensions//libdri2.so
+(II) Module dri2: vendor="X.Org Foundation"
+	compiled for 1.6.1.901, module version = 1.0.0
+	ABI class: X.Org Server Extension, version 2.0
+(II) Loading extension DRI2
+(II) LoadModule: "nvidia"
+(II) Loading /usr/lib64/xorg/modules/drivers//nvidia_drv.so
+(II) Module nvidia: vendor="NVIDIA Corporation"
+	compiled for 4.0.2, module version = 1.0.0
+	Module class: X.Org Video Driver
+(II) NVIDIA dlloader X Driver  185.18.36  Fri Aug 14 17:51:02 PDT 2009
+(II) NVIDIA Unified Driver for all Supported NVIDIA GPUs
+(II) Primary Device is: PCI 01@00:00:0
+(II) Loading sub module "fb"
+(II) LoadModule: "fb"
+(II) Loading /usr/lib64/xorg/modules//libfb.so
+(II) Module fb: vendor="X.Org Foundation"
+	compiled for 1.6.1.901, module version = 1.0.0
+	ABI class: X.Org ANSI C Emulation, version 0.4
+May 24 22:24:12 VNL_UpdateNATFromConfig - Removing NAT configuration file succeeded for vnet: vmnet26
+Enabling /etc/fstab swaps:  [60G[[0;32m  OK  [0;39m]
+Entering non-interactive startup
+Applying Intel CPU microcode update: [60G[[0;32m  OK  [0;39m]
+Checking kmods exist for 2.6.30.5-43.fc11.x86_64[60G[[0;32m  OK  [0;39m]
+Enabling ondemand cpu frequency scaling: [60G[[0;32m  OK  [0;39m]
+Checking for module nvidia.ko: [60G[[0;32m  OK  [0;39m]
+Enabling the nvidia driver: Driver already enabled.
+[60G[[0;32m  OK  [0;39m]
+Starting auditd: [60G[[0;32m  OK  [0;39m]
+Starting portreserve: [60G[[0;32m  OK  [0;39m]
+Starting system logger: [60G[[0;32m  OK  [0;39m]
+Starting irqbalance: [60G[[0;32m  OK  [0;39m]
+Starting rpcbind: [60G[[0;32m  OK  [0;39m]
+Starting NFS statd: [60G[[0;32m  OK  [0;39m]
+Starting RPC idmapd: [60G[[0;32m  OK  [0;39m]
+Starting VMware services:
+   VMware USB Arbitrator[60G[[0;32m  OK  [0;39m]
+   Virtual machine monitor[60G[[0;32m  OK  [0;39m]
+   Virtual machine communication interface[60G[[0;32m  OK  [0;39m]
+   VM communication interface socket family[60G[[0;32m  OK  [0;39m]
+   Blocking file system[60G[[0;32m  OK  [0;39m]
+   Virtual ethernet[60G[[0;32m  OK  [0;39m]
+   Shared Memory Available[60G[[0;32m  OK  [0;39m]
+Starting system message bus: [60G[[0;32m  OK  [0;39m]
+Starting Avahi daemon... [60G[[0;32m  OK  [0;39m]
+Starting cups: [60G[[0;32m  OK  [0;39m]
+Starting acpi daemon: [60G[[0;32m  OK  [0;39m]
+Starting HAL daemon: [60G[[0;32m  OK  [0;39m]
+Starting PC/SC smart card daemon (pcscd): [60G[[0;32m  OK  [0;39m]
+Setting network parameters... [60G[[0;32m  OK  [0;39m]
