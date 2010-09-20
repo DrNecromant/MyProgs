@@ -1,4 +1,4 @@
-MAIN = prog
+MAIN = compress
 MYLIB = mylib.c
 
 $(MAIN): $(MYLIB:.c=.o)
