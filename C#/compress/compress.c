@@ -68,7 +68,7 @@ int parseArgs(int argc, char **argv)
 	return 0;
 }
 
-saveTree(treep t) {
+int saveTree(treep t) {
 	intchainp p;
 	int diff, pvalue = 0;
 	if(t != 0) {
