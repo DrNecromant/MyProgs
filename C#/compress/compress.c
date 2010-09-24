@@ -1,3 +1,20 @@
+//Program for compress-decompress files
+//
+//Compressor save chars into tree struct:
+//      value
+//	count
+//	char position struct:
+//		value
+//		->next
+//	->right (the bigger char)
+//	->left (the smaller char)
+//After that write tree into read file:
+//char(byte).count(2bytes).positions(2bytes each)...
+//
+//Decompressor read file and write chars
+//into write file according char position
+//with fseek()
+
 #include "mylib.h"
 
 //error consts
