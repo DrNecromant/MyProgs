@@ -145,10 +145,8 @@ void closeFiles()
 
 static int saveChainEl(intchainp *ch, int value)
 {
-	debug("=== save chain element ===");
 	intchainp link;
 	if(!*ch) {
-		debug("CHAIN: init chain");
 		*ch = challoc();
 		if(!*ch) {
 			return ALLOC_ERR;
@@ -160,14 +158,12 @@ static int saveChainEl(intchainp *ch, int value)
 		while(link->next) {
 			link = link->next;
 		}
-		debug("CHAIN: create link");
 		link->next = challoc();
 		if(!link->next) {
 			return ALLOC_ERR;
 		}
 		link = link->next;
 	}
-	debug("CHAIN: set value %d", value);
 	link->value = value;
 	return 0;
 }
@@ -175,16 +171,13 @@ static int saveChainEl(intchainp *ch, int value)
 int saveTreeEl(treep *t, char c, int pos)
 {
 	int ret;
-	debug("=== save tree element %c on pos %d ===", c, pos);
 	treep branch;
 	if(!*t) {
-		debug("TREE: init tree");
 		*t = talloc();
 		if(!*t) {
 			return ALLOC_ERR;
 		}
 		branch = *t;
-		debug("TREE: set value, %c", c);
 		branch->value = c;
 		branch->count = 0;
 	}
@@ -193,12 +186,10 @@ int saveTreeEl(treep *t, char c, int pos)
 		while(c != branch->value) {
 			if(c > branch->value) {
 				if(!branch->right) {
-					debug("TREE: create right");
 					branch->right = talloc();
 					if(!branch->right) {
 						return ALLOC_ERR;
 					}
-					debug("TREE: set value %c", c);
 					branch->right->value = c;
 					branch->right->count = 0;
 				}
@@ -206,12 +197,10 @@ int saveTreeEl(treep *t, char c, int pos)
 			}
 			else if(c < branch->value) {
 				if(!branch->left) {
-					debug("TREE: create right");
 					branch->left = talloc();
 					if(!branch->left) {
 						return ALLOC_ERR;
 					}
-					debug("TREE: set value %c", c);
 					branch->left->value = c;
 					branch->left->count = 0;
 				}
@@ -219,7 +208,6 @@ int saveTreeEl(treep *t, char c, int pos)
 			}
 		}
 	}
-	debug("TREE: set count %d", (branch->count + 1));
 	branch->count++;
 	ret = saveChainEl(&branch->pos, pos);
 	return ret;

@@ -43,7 +43,8 @@ int main(int argc, char **argv)
 	}
 
 	if(dec == 0) {
-		info("Start compressing");
+		info("Start compress...");
+		debug("Creating tree...");
 		while((c = getChar()) != getEOF()) {
 			ret = saveTreeEl(&storage, c, i++);
 			if(ret) {
@@ -51,11 +52,12 @@ int main(int argc, char **argv)
 				return ret;
 			}
 		}
-		info("letters count %d", i);
+		debug("Storing tree into file...");
 		saveTree(storage);
+		info("File successfully compressed");
 	}
 	else if(dec == 1) {
-		info("Start decompressing");
+		info("Start decompress...");
 		while((c = getChar()) != getEOF()) {
 			c2 = getChar();
 			c1 = getChar();
@@ -69,6 +71,7 @@ int main(int argc, char **argv)
 				putChar(c);
 			}
 		}
+		info("File successfully decompressed");
 	}
 	closeFiles();
 	return 0;
@@ -104,7 +107,7 @@ int parseArgs(int argc, char **argv)
 	if(!filewrite || !fileread) {
 		return PARSING_ERR;
 	}
-	debug("Get files to compress: %s, %s", fileread, filewrite);
+	debug("Files: \"%s\", \"%s\"", fileread, filewrite);
 	openFileRead(fileread);
 	openFileWrite(filewrite);
 	return 0;
@@ -115,7 +118,6 @@ int saveTree(treep t) {
 	int diff, pvalue = 0;
 	if(t != 0) {
 		saveTree(t->left);
-		debug("%c, %d", t->value, t->count);
 		putChar(t->value);
 		putChar(getCharFromInt2(t->count));
 		putChar(getCharFromInt1(t->count));
@@ -124,7 +126,6 @@ int saveTree(treep t) {
 			diff = p->value - pvalue;
 			putChar(getCharFromInt2(diff));
 			putChar(getCharFromInt1(diff));
-			debug("%d, %d", p->value, diff);
 			pvalue = p->value;
 			p = p->next;
 		}
