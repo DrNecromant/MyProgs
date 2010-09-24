@@ -7,13 +7,16 @@
 #define ALLOC_ERR_STR "Allocation error"
 #define PARSING_ERR_STR "Invalid usage"
 
+//decompress flag
+int dec = 0;
+
 int parseArgs(int argc, char **argv);
 
 int main(int argc, char **argv)
 {
 	treep storage = 0;
-	char c;
-	int i = 0;
+	char c, c1, c2;
+	int count, value, i = 0;
 	int ret;
 
 	ret = parseArgs(argc, argv);
@@ -22,16 +25,34 @@ int main(int argc, char **argv)
 		return ret;
 	}
 
-	info("Start compressing");
-	while((c = getChar()) != getEOF()) {
-		ret = saveTreeEl(&storage, c, i++);
-		if(ret) {
-			error(ALLOC_ERR_STR);
-			return ret;
+	if(dec == 0) {
+		info("Start compressing");
+		while((c = getChar()) != getEOF()) {
+			ret = saveTreeEl(&storage, c, i++);
+			if(ret) {
+				error(ALLOC_ERR_STR);
+				return ret;
+			}
+		}
+		info("letters count %d", i);
+		saveTree(storage);
+	}
+	else if(dec == 1) {
+		info("Start decompressing");
+		while((c = getChar()) != getEOF()) {
+			c2 = getChar();
+			c1 = getChar();
+			count = getIntFromChars(c1, c2);
+			value = 0;
+			while(count-- > 0) {
+				c2 = getChar();
+				c1 = getChar();
+				value += getIntFromChars(c1, c2);
+				moveFilePos(value);
+				putChar(c);
+			}
 		}
 	}
-	info("letters count %d", i);
-	saveTree(storage);
 	closeFiles();
 	return 0;
 }
@@ -41,6 +62,7 @@ int parseArgs(int argc, char **argv)
 	charp fileread = 0, filewrite = 0;
 	int argn = argc;
 	charp arg;
+	extern int dec;
 
 	while(argn-- > 1) {
 		arg = argv[argc - argn];
@@ -49,6 +71,9 @@ int parseArgs(int argc, char **argv)
 				case 'd': {
 					setDebugLevel(++arg);
 					break;
+				}
+				case 'r': {
+					dec = 1;
 				}
 			}
 		}

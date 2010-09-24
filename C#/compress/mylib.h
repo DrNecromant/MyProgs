@@ -12,6 +12,9 @@ char getEOF();
 //just get char
 char getChar();
 
+//set offset in read file
+void moveFilePos(int pos);
+
 //just get char
 void putChar(char c);
 

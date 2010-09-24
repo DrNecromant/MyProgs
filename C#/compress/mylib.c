@@ -87,6 +87,11 @@ char getChar()
 	return(getc(_file_read));
 }
 
+void moveFilePos(int pos)
+{
+	fseek(_file_write, pos, 0);
+}
+
 void putChar(char c)
 {
 	putc(c, _file_write);
