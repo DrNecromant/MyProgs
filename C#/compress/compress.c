@@ -28,6 +28,7 @@
 int dec = 0;
 
 int parseArgs(int argc, char **argv);
+int saveTree(treep t);
 
 int main(int argc, char **argv)
 {
