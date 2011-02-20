@@ -1,6 +1,6 @@
 import SOAPpy
 from datetime import datetime, timedelta, date
-from pylab import plot, grid, xticks, yticks, title, legend, savefig, clf
+from pylab import plot, grid, xticks, yticks, title, legend, savefig, clf, pie, figure
 
 from consts import *
 total = None
@@ -33,6 +33,7 @@ class JiraWrapper():
 		to dictionary
 		"""
 		data = {}
+		data[AS] = issueObj.assignee
 		data[KE] = issueObj.key
 		data[SU] = issueObj.summary
 		data[RE] = issueObj.resolution
@@ -160,3 +161,13 @@ def buildGraph(lines, dates, iter_range, owners, fname):
 	legend(loc = "upper left")
 	savefig(fname)
 	clf()
+
+def buildPie(es_data):
+	data = es_data.items()
+	labels = [l[0] for l in data]
+	values = [l[1] for l in data]
+	labels = [l + "(%.2fd)" % es_data[l] for l in labels]
+
+	figure(figsize=(8,8))
+	pie(values, labels = labels)
+	savefig("pie.png")
